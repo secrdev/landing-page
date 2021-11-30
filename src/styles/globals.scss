@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Roboto:wght@400;700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+  overflow-y: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Logo {
+  font-size: 4vw;
+}
+
+.Big-circle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  max-width: 75vw;
+  max-height: auto;
+  margin-top: -25px;
+}
+
+.Showcase-container {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.Showcase-text {
+  padding-left: 4.5vw;
+  font-size: 2rem;
+  font-weight: bold;
+  max-width: 45vw;
+  text-align: left;
+}
+
+.Showcase-description {
+  font-weight: lighter;
+}
+
+.Request-access {
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background-image: linear-gradient(to right, #ff0000, #ff9500);
+  color: #ffffff;
+  width: 10vw;
+  height: 5vh;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.Easy {
+  background: linear-gradient(to right, #ff0000, #ff9500);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.Small-circle-2 {
+  margin-left: 55vw;
+  margin-top: 75vh;
+  max-width: 15vw;
+  max-height: auto;
+}
+
+.Input-image {
+  max-width: 35vw;
+  max-height: auto;
+  border-radius: 6px;
+}
+
+.Form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25vh;
+  height: 100vh;
+}
+
+.Form-title {
+  font-size: 4rem;
+}
+
+.Form-input input {
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  color: #ffffff;
+  height: 5vh;
+  width: 20vw;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.Form-input input::placeholder {
+  color: #ffffff;
+}
+
+.Usecase-input {
+  height: 20vh;
+}

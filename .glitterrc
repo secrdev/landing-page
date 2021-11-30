@@ -1,0 +1,35 @@
+{
+    "commit_message": "$1: $2+",
+    "commit_message_arguments": [
+        {
+            "argument": 1,
+            "case": "sentence",
+            "type_enums": [
+                "New",
+                "Fix",
+                "Feature",
+                "Deps",
+                "Refactor",
+                "Cleanup"
+            ]
+        }
+    ],
+    "custom_tasks": [
+        {
+            "name": "fmt",
+            "execute": [
+                "yarn fmt"
+            ]
+        },
+        {
+            "name": "lint",
+            "execute": [
+                "yarn lint"
+            ]
+        }
+    ],
+    "hooks": [
+        "fmt",
+        "lint"
+    ]
+}
