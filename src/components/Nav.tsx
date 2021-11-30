@@ -6,13 +6,38 @@ import {
   Flex,
   Image,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react';
 import React from 'react';
 import ThemeSwitcher from './themeSwitcher';
-import { FaDribbble, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-export default function Nav(props) {
+import { FaGithubAlt, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+export default function Nav({ isMobile }: { isMobile: boolean }) {
+  const imgsrc = useColorModeValue(
+    '/Secr-with-text-black.svg',
+    'Secr-with-text-white.svg'
+  );
+  if (isMobile)
+    return (
+      <Box position="fixed" as="nav" w="100%" zIndex={1}>
+        <Container
+          display="flex"
+          p={2}
+          maxW="container.md"
+          wrap="wrap"
+          align="center"
+          justify="center"
+          style={{
+            left: '50%',
+          }}>
+          <Flex alignItems="center" justifyContent="center" mr={5}>
+            <Image src={imgsrc} alt="logo" />
+          </Flex>
+        </Container>
+      </Box>
+    );
+
   return (
-    <Box position="fixed" as="nav" w="100%" zIndex={1} {...props}>
+    <Box position="fixed" as="nav" w="100%" zIndex={1}>
       <Container
         display="flex"
         p={2}
@@ -24,16 +49,11 @@ export default function Nav(props) {
           left: '50%',
         }}>
         <Flex alignItems="center" justifyContent="center" mr={5}>
-          <Image
-            src={useColorModeValue(
-              '/Secr-with-text-black.svg',
-              'Secr-with-text-white.svg'
-            )}
-            alt="logo"
-          />
+          <Link href="/">
+            {' '}
+            <Image src={imgsrc} alt="logo" />
+          </Link>
         </Flex>
-
-        {/*  Socials In Right Corner */}
         <Stack
           isInline
           align="center"
@@ -42,10 +62,18 @@ export default function Nav(props) {
           ml="auto"
           mr="auto">
           <ThemeSwitcher />
-          <IconButton icon={<FaDribbble />} />
-          <IconButton icon={<FaTwitter />} />
-          <IconButton icon={<FaYoutube />} />
-          <IconButton icon={<FaInstagram />} />
+          <Link href="//github.com/secrdev">
+            {/* @ts-ignore */}
+            <IconButton icon={<FaGithubAlt />} />
+          </Link>
+          <Link href="//twitter.com/secrdev">
+            {/* @ts-ignore */}
+            <IconButton icon={<FaTwitter />} />
+          </Link>
+          <Link href="//instagram.com/secrdev">
+            {/* @ts-ignore */}
+            <IconButton icon={<FaInstagram />} />
+          </Link>
         </Stack>
       </Container>
     </Box>

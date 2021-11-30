@@ -1,6 +1,6 @@
-import { Button, Flex, Heading } from '@chakra-ui/react';
+import { Button, Center, Flex, Heading, Link } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import Nav from '../components/Nav';
+import React from 'react';
 const Home: NextPage = (props: any) => {
   return (
     <>
@@ -10,24 +10,31 @@ const Home: NextPage = (props: any) => {
         bgPosition="right top"
         h="100vh"
         w={'100%'}>
-        <Nav />
         <br />
         <Flex className="Landing-page">
           <div className="Showcase-container">
             <div className="Showcase-text">
-              <Heading as="h1">
+              <Heading as="h1" fontSize={props.isMobileView ? '1.3em' : '3em'}>
                 Appsec made <a className="Easy">easy.</a>
               </Heading>
-              <Heading as="h4" className="Showcase-description">
-                SECR makes scanning for attack vectors in your software super
-                simple!
-              </Heading>
-              <Button
-                className="Request-access"
-                type="submit"
-                bgGradient="linear(to-r, #ff0000, #ff9500)">
-                Access Coming Soon
-              </Button>
+              <br />
+              {props.isMobileView ? (
+                ''
+              ) : (
+                <Heading as="h4" className="Showcase-description">
+                  SECR makes scanning for attack vectors in your software super
+                  simple!
+                </Heading>
+              )}
+              <Link
+                href="/access"
+                _hover={{ textDecoration: 'none', bg: 'transparent' }}>
+                <Button
+                  className="Request-access"
+                  bgGradient="linear(to-r, #ff0000, #ff9500)">
+                  Request Access
+                </Button>
+              </Link>
             </div>
           </div>
         </Flex>

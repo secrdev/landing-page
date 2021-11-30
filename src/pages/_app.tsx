@@ -3,6 +3,9 @@ import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import Head from 'next/head';
+import React from 'react';
+import Nav from '../components/Nav';
+import Device from '../device';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider
@@ -21,14 +24,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="apple-touch-icon" href="/logo.svg" />
       </Head>
+      <Device>
+        {({ isMobile }) => {
+          return <Nav isMobile={isMobile} />;
+        }}
+      </Device>
+
       <Component {...pageProps} />
     </ChakraProvider>
   );
 }
-
-const config = {
-  initialColorMode: 'light',
-  useSystemColorMode: false,
-};
 
 export default MyApp;
