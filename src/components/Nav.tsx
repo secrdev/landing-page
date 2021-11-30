@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import ThemeSwitcher from './themeSwitcher';
-import { FaGithubAlt, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaDiscord, FaGithubAlt, FaInstagram, FaTwitter} from 'react-icons/fa';
 export default function Nav({ isMobile }: { isMobile: boolean }) {
   const imgsrc = useColorModeValue(
     '/Secr-with-text-black.svg',
@@ -73,6 +73,10 @@ export default function Nav({ isMobile }: { isMobile: boolean }) {
           <Link href="//instagram.com/secrdev">
             {/* @ts-ignore */}
             <IconButton icon={<FaInstagram />} />
+          </Link>
+          <Link href="//discord.com/invite/g7XEQgF5BH">
+            {/* @ts-ignore */}
+            <IconButton icon={<FaDiscord />} />
           </Link>
         </Stack>
       </Container>
