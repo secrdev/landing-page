@@ -15,12 +15,13 @@ function Home(props: any) {
   const [email, setEmail] = React.useState('');
   const [org, setOrg] = React.useState('');
   const [reason, setReason] = React.useState('');
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     if (email.trim() !== '' && org.trim() !== '' && reason.trim() !== '') {
-      emailjs.sendForm('secremail', 'secrprivatealpha', e.target, 'user_a5cBJN9rOhduka18DDhfg');
-      e.target.reset();
+      emailjs.sendForm('secremail', 'secrprivatealpha', event.target, 'user_a5cBJN9rOhduka18DDhfg');
+      event.target.reset();
     }
+    event.target.reset();
   };
   return (
     <>
@@ -60,7 +61,7 @@ function Home(props: any) {
               <Center>
                 {' '}
                 <Button
-                  type="submit"
+                  type="button"
                   mt={4}
                   bgGradient="linear(to-r, #ff0000, #ff9500)"
                   color="white">
