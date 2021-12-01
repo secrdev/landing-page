@@ -8,21 +8,29 @@ import {
   Stack,
   Center,
 } from '@chakra-ui/react';
-import type { NextPage } from 'next';
 import React from 'react';
-import emailjs from "emailjs-com";
+import emailjs from 'emailjs-com';
 function Home(props: any) {
   const [email, setEmail] = React.useState('');
   const [org, setOrg] = React.useState('');
   const [reason, setReason] = React.useState('');
   function handleSubmit(event) {
     event.preventDefault();
+    // Reset the form after submission
+    setEmail('');
+    setOrg('');
+    setReason('');
     if (email.trim() !== '' && org.trim() !== '' && reason.trim() !== '') {
-      emailjs.sendForm('secremail', 'secrprivatealpha', event.target, 'user_a5cBJN9rOhduka18DDhfg');
+      emailjs.sendForm(
+        'secremail',
+        'secrprivatealpha',
+        event.target,
+        'user_a5cBJN9rOhduka18DDhfg'
+      );
       event.target.reset();
     }
     event.target.reset();
-  };
+  }
   return (
     <>
       <Flex h="100vh" w={'100%'} alignItems="center" justifyContent="center">
@@ -61,7 +69,7 @@ function Home(props: any) {
               <Center>
                 {' '}
                 <Button
-                  type="button"
+                  type="submit"
                   mt={4}
                   bgGradient="linear(to-r, #ff0000, #ff9500)"
                   color="white">
