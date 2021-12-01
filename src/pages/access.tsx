@@ -7,26 +7,37 @@ import {
   Textarea,
   Stack,
   Center,
+  useToast,
 } from '@chakra-ui/react';
 import React from 'react';
 import emailjs from 'emailjs-com';
 function Home(props: any) {
+  const toast = useToast();
   const [email, setEmail] = React.useState('');
   const [org, setOrg] = React.useState('');
   const [reason, setReason] = React.useState('');
   function handleSubmit(event) {
     event.preventDefault();
     // Reset the form after submission
-    setEmail('');
-    setOrg('');
-    setReason('');
     if (email.trim() !== '' && org.trim() !== '' && reason.trim() !== '') {
-      emailjs.sendForm(
-        'secremail',
-        'secrprivatealpha',
-        event.target,
-        'user_a5cBJN9rOhduka18DDhfg'
-      );
+      Promise.all([
+        emailjs.sendForm(
+          'secremail',
+          'secrprivatealpha',
+          event.target,
+          'user_a5cBJN9rOhduka18DDhfg'
+        ),
+        setOrg(''),
+        setEmail(''),
+        setReason(''),
+        toast({
+          title: 'Success!',
+          description: 'Your request has been sent!',
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        }),
+      ]);
       event.target.reset();
     }
     event.target.reset();
