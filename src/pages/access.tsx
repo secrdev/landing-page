@@ -17,8 +17,10 @@ function Home(props: any) {
   const [reason, setReason] = React.useState('');
   function handleSubmit(e) {
     e.preventDefault();
-    emailjs.sendForm('secremail', 'secrprivatealpha', e.target, 'user_a5cBJN9rOhduka18DDhfg');
-    e.target.reset();
+    if (email.trim() !== '' && org.trim() !== '' && reason.trim() !== '') {
+      emailjs.sendForm('secremail', 'secrprivatealpha', e.target, 'user_a5cBJN9rOhduka18DDhfg');
+      e.target.reset();
+    }
   };
   return (
     <>
