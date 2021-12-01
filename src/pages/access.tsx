@@ -44,7 +44,7 @@ const Home: NextPage = (props: any) => {
                 />
                 <Textarea
                   type="paragraph_text"
-                  placeholder="Why you chose SECR?"
+                  placeholder="Why you chose SECR"
                   value={reason}
                   onChange={e => setReason(e.target.value)}
                 />
