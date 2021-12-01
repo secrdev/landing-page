@@ -10,13 +10,16 @@ import {
 } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import React from 'react';
-const Home: NextPage = (props: any) => {
+import emailjs from "emailjs-com";
+function Home(props: any) {
   const [email, setEmail] = React.useState('');
   const [org, setOrg] = React.useState('');
   const [reason, setReason] = React.useState('');
-  function handleSubmit() {
-    console.log(email, org, reason);
-  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    emailjs.sendForm('secremail', 'secrprivatealpha', e.target, 'user_a5cBJN9rOhduka18DDhfg');
+    e.target.reset();
+  };
   return (
     <>
       <Flex h="100vh" w={'100%'} alignItems="center" justifyContent="center">
@@ -35,18 +38,21 @@ const Home: NextPage = (props: any) => {
                   placeholder="Email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
+                  name="email"
                 />
                 <Input
                   type="text"
                   placeholder="Organization"
                   value={org}
                   onChange={e => setOrg(e.target.value)}
+                  name="org"
                 />
                 <Textarea
                   type="paragraph_text"
                   placeholder="Why you chose SECR"
                   value={reason}
                   onChange={e => setReason(e.target.value)}
+                  name="reason"
                 />
               </Stack>
               <Center>
@@ -65,7 +71,7 @@ const Home: NextPage = (props: any) => {
       </Flex>
     </>
   );
-};
+}
 
 Home.getInitialProps = (ctx: any) => {
   let isMobileView = (
