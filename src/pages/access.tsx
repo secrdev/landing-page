@@ -43,7 +43,7 @@ function Home(props: any) {
     event.target.reset();
   }
   return (
-    <>
+    <div className="Access">
       <Flex h="100vh" w={'100%'} alignItems="center" justifyContent="center">
         <Stack spacing={8} maxW="sm">
           <Flex a>
@@ -91,7 +91,7 @@ function Home(props: any) {
           </form>
         </Stack>
       </Flex>
-    </>
+    </div>
   );
 }
 
