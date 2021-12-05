@@ -30,7 +30,7 @@ export default function Nav({ isMobile }: { isMobile: boolean }) {
             left: '50%',
           }}>
           <Flex alignItems="center" justifyContent="center" mr={5}>
-            <Image src={imgsrc} alt="logo" />
+            <a href="/"><Image src={imgsrc} alt="logo" /></a>
           </Flex>
         </Container>
       </Box>
