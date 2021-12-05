@@ -18,15 +18,18 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/logo.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <meta
-          name="title"
-          content="SECR"
-        />
-        <meta
-          name="description"
-          content="SECR makes scanning for attack vectors in your software super simple!"
-        />
+        <meta name="title" content="SECR" />
+        <meta name="description" content="SECR makes scanning for attack vectors in your software super simple!" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://secrdev.vercel.app/" />
+        <meta property="og:title" content="SECR" />
+        <meta property="og:description" content="SECR makes scanning for attack vectors in your software super simple!" />
         <meta property="og:image" content="../../public/preview/preview.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://secrdev.vercel.app" />
+        <meta property="twitter:title" content="SECR" />
+        <meta property="twitter:description" content="SECR makes scanning for attack vectors in your software super simple!" />
+        <meta property="twitter:image" content="../../public/preview/preview.png" />
         <link rel="apple-touch-icon" href="/logo.svg" />
       </Head>
       <Device>
@@ -34,7 +37,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           return <Nav isMobile={isMobile} />;
         }}
       </Device>
-
       <Component {...pageProps} />
     </ChakraProvider>
   );
