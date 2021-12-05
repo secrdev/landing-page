@@ -47,7 +47,7 @@ function Home(props: any) {
       <Flex h="100vh" w={'100%'} alignItems="center" justifyContent="center">
         <Stack spacing={8} maxW="sm">
           <Flex a>
-            <Heading as="h1" fontSize={props.isMobileView ? '1.3em' : '3em'}>
+            <Heading as="h1" fontSize={props.isMobileView ? '2.75em' : '3em'}>
               Request <a className="Easy">access</a>
             </Heading>
           </Flex>

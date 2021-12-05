@@ -14,7 +14,7 @@ const Home: NextPage = (props: any) => {
         <Flex className="Landing-page">
           <div className="Showcase-container">
             <div className="Showcase-text">
-              <Heading as="h1" fontSize={props.isMobileView ? '1.3em' : '3em'}>
+              <Heading as="h1" fontSize={props.isMobileView ? '1.5em' : '3em'}>
                 Appsec made <a className="Easy">easy.</a>
               </Heading>
               <br />
