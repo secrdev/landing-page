@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="SECR makes scanning for attack vectors in your software super simple!"
         />
+        <meta name="image" content={"../../public/preview/preview.png"} />
         <link rel="apple-touch-icon" href="/logo.svg" />
       </Head>
       <Device>
