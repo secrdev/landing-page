@@ -19,10 +19,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta
+          name="title"
+          content="SECR"
+        />
+        <meta
           name="description"
           content="SECR makes scanning for attack vectors in your software super simple!"
         />
-        <meta name="image" content={"../../public/preview/preview.png"} />
+        <meta property="og:image" content="../../public/preview/preview.png" />
         <link rel="apple-touch-icon" href="/logo.svg" />
       </Head>
       <Device>
