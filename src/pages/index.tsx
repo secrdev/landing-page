@@ -27,12 +27,12 @@ const Home: NextPage = (props: any) => {
                 </Heading>
               )}
               <Link
-                href="/access"
+                href="https://github.com/secrdev/secr"
                 _hover={{ textDecoration: 'none', bg: 'transparent' }}>
                 <Button
                   className="Request-access"
                   bgGradient="linear(to-r, #ff0000, #ff9500)">
-                  Request Access
+                  Get Started
                 </Button>
               </Link>
             </div>
