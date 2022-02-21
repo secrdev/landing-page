@@ -27,7 +27,7 @@ const Home: NextPage = (props: any) => {
                 </Heading>
               )}
               <Link
-                href="https://github.com/secrdev/secr"
+                href="https://github.com/secrdev/SECR/blob/master/README.md"
                 _hover={{ textDecoration: 'none', bg: 'transparent' }}>
                 <Button
                   className="Request-access"
