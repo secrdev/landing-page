@@ -74,7 +74,7 @@ export default function Nav({ isMobile }: { isMobile: boolean }) {
             {/* @ts-ignore */}
             <IconButton icon={<FaInstagram />} />
           </Link>
-          <Link href="//discord.com/invite/g7XEQgF5BH">
+          <Link href="//discord.gg/vEVqVaX4n8">
             {/* @ts-ignore */}
             <IconButton icon={<FaDiscord />} />
           </Link>
